@@ -1,0 +1,6 @@
+@MongoDb.NetCore_HostAddress = http://localhost:5255
+
+GET {{MongoDb.NetCore_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
