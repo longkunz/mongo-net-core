@@ -7,7 +7,7 @@ namespace MongoDb.NetCore.Models
     public class Actor : IBaseDocument
     {
         [BsonId]
-        [BsonRepresentation(BsonType.Int32)]
+        //[BsonRepresentation(BsonType.Int32)]
         public BsonValue Id { get; set; }
 
         public string Name { get; set; }

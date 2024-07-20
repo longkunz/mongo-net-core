@@ -1,4 +1,5 @@
 using MongoDb.Core;
+using MongoDb.NetCore.AutoMappers;
 using MongoDb.NetCore.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,9 +11,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 // Add mongodb
-builder.Services.AddMongoDb(builder.Configuration);
+builder.Services.AddMongoDb(builder.Configuration, "MongoDbSetting");
 builder.Services.AddTransient<ISampleService, SampleService>();
-
+builder.Services.AddAutoMapper(typeof(Program));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
